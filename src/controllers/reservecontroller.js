@@ -1,5 +1,5 @@
 export const reserve = (req,res) =>{
-    return res.send("reserve")
+    return res.render("reserve")
 }
 export const watch = (req,res) =>{
     return res.send(`watch seat ${req.params.id}`)

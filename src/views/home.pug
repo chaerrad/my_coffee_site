@@ -2,5 +2,21 @@ doctype html
 html(lang="ko")
     head
         title Cafe
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
     body
-        h1 Cafe
+        h1 Welcome to Hongik-Cafe 
+        nav
+            ul
+                li
+                    a(href="/") Home
+                li
+                    a(href="/login") login
+                li
+                    a(href="/purchase") purchase
+                li
+                    a(href="/reserve") reserve
+
+
+        block content
+
+    include partials/footer.pug

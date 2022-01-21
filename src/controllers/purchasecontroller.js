@@ -1,5 +1,5 @@
 export const purchase = (req,res) => {
-    res.send("purchase");
+    res.render("purchase");
 };
 
 export const beverage = (req,res) => {
