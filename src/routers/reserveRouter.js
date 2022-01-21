@@ -4,9 +4,9 @@ import {reserve,watch,edit,remove} from "../controllers/reservecontroller.js";
 const reserveRouter = express.Router();
 
 reserveRouter.get("/",reserve);
-reserveRouter.get("/watch",watch);
-reserveRouter.get("/edit",edit);
-reserveRouter.get("/delete",remove);
+reserveRouter.get("/:id",watch);
+reserveRouter.get("/:id/edit",edit);
+reserveRouter.get("/:id/remove",remove);
 
 
 export default reserveRouter;
