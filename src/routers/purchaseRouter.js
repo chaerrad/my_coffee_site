@@ -5,10 +5,10 @@ const purchaseRouter = express.Router();
 
 purchaseRouter.get("/",purchase);
 purchaseRouter.get("/beverage",beverage );
-purchaseRouter.get("/beverage/:id",beverages);
+purchaseRouter.get("/beverage/:id(\\d+)",beverages);
 purchaseRouter.get("/bakery",bakery );
-purchaseRouter.get("/bakery/:id",bakeries );
+purchaseRouter.get("/bakery/:id(\\d+)",bakeries );
 purchaseRouter.get("/icecream",icecream );
-purchaseRouter.get("/icecream/:id",icecreams );
+purchaseRouter.get("/icecream/:id(\\d+)",icecreams );
 
 export default purchaseRouter;
