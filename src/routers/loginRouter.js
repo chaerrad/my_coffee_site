@@ -1,11 +1,9 @@
 import express from "express";
-
+import {login,adminlogin,customlogin} from "../controllers/logincontroller"; 
 const loginRouter = express.Router();
 
-const login = (req,res) => {
-    res.send("login");
-}
-loginRouter.get("/customer",login);
-loginRouter.get("/admin",login);
+loginRouter.get("/",login);
+loginRouter.get("/customer",customlogin);
+loginRouter.get("/admin",adminlogin);
 
 export default loginRouter;

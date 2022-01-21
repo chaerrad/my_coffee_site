@@ -1,8 +1,8 @@
 import express from "express";
+import {handleHome} from "../controllers/globalcontroller";
 
 const globalRouter = express.Router();
 
-const handleHome = (req,res) => res.send("Home");
 
 globalRouter.get("/",handleHome);
 

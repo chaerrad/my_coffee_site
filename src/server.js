@@ -3,7 +3,8 @@ import morgan from "morgan";
 import globalRouter from "./routers/globalRouter.js";
 import loginRouter from "./routers/loginRouter.js";
 import purchaseRouter from "./routers/purchaseRouter.js";
-import reservationRouter from "./routers/reservationRouter.js";
+import reserveRouter from "./routers/reserveRouter.js";
+
 const PORT = 4000;
 
 const app = express();
@@ -16,5 +17,5 @@ app.listen(PORT, handleListening);
 app.use("/", globalRouter);
 app.use("/login", loginRouter);
 app.use("/purchase", purchaseRouter);
-app.use("/reservation", reservationRouter);
+app.use("/reserve", reserveRouter);
 

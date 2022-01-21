@@ -1,14 +1,11 @@
 import express from "express";
+import {purchase,beverage,bakery,icecream} from "../controllers/purchasecontroller.js";
 
 const purchaseRouter = express.Router();
 
-const purchase = (req,res) => {
-    res.send("purchase");
-}
-
-
-purchaseRouter.get("/beverage",purchase );
-purchaseRouter.get("/bakery",purchase );
-purchaseRouter.get("/icecream",purchase );
+purchaseRouter.get("/",purchase)
+purchaseRouter.get("/beverage",beverage );
+purchaseRouter.get("/bakery",bakery );
+purchaseRouter.get("/icecream",icecream );
 
 export default purchaseRouter;
