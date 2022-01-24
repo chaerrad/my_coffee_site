@@ -3,24 +3,24 @@ export const purchase = (req,res) => {
 };
 
 export const beverage = (req,res) => {
-    res.send("beverage");
+    res.render("purchase-beverage");
 };
 export const beverages = (req,res) => {
-    res.send("beverages");
+    res.send(`${req.params.id}`);
 };
 
 export const bakery = (req,res) => {
-    res.send("bakery");
+    res.render("purchase-bakery");
 };
 
 export const bakeries = (req,res) => {
-    res.send("bakeries");
+    res.send(`${req.params.id}`);
 };
 
 export const icecream = (req,res) => {
-    res.send("icecream");
+    res.render("purchase-icecream");
 };
 
 export const icecreams = (req,res) => {
-    res.send("icecreams");
+    res.send(`${req.params.id}`);
 };

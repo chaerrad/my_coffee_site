@@ -5,7 +5,7 @@ export const logout= (req,res) => {
     res.send("logout");
 }
 export const adminlogin = (req,res) => {
-    res.send("admin-login");
+    res.render();
 }
 
 export const customlogin = (req,res) => {

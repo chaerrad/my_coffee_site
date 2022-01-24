@@ -4,7 +4,7 @@ import {purchase,beverage,beverages,bakeries,icecreams,bakery,icecream} from "..
 const purchaseRouter = express.Router();
 
 purchaseRouter.get("/",purchase);
-purchaseRouter.get("/beverage",beverage );
+purchaseRouter.get("/beverage",beverage);
 purchaseRouter.get("/beverage/:id(\\d+)",beverages);
 purchaseRouter.get("/bakery",bakery );
 purchaseRouter.get("/bakery/:id(\\d+)",bakeries );
