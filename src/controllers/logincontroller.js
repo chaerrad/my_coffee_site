@@ -10,18 +10,41 @@ export const join= (req,res) => {
 }
 export const postJoin = async (req,res) => {
     const {ID,password} = req.body;
-    const user = await User.create(
+    try{
+        const user = await User.create(
         {
             ID,
             password
         }
     );
     res.redirect("/");
+    } catch (error)
+    {
+        return res.render("join.pug");
+    }
+
 }
 export const postlogin = async (req,res) => {
     const {ID,password} = req.body;
+    const user = await User.findOne( {ID : ID} );
+    if(!user)
+    {
+        console.log("please create ID");
+        return res.render("login");
+    }
+    else {
+        if(user.password === password)
+        {
+            console.log("password correct");
+            return res.redirect("/");
+        }
+        else
+        {
+            console.log("password wrong");
+            return res.redirect("login");
+        }
+    }
     
-    return res.redirect("/");
 }
 export const adminlogin = (req,res) => {
     res.render();
