@@ -5,13 +5,23 @@ export const login = (req,res) => {
 export const logout= (req,res) => {
     res.send("logout");
 }
+export const join= (req,res) => {
+    res.render("join.pug");
+}
+export const postJoin = async (req,res) => {
+    const {ID,password} = req.body;
+    const user = await User.create(
+        {
+            ID,
+            password
+        }
+    );
+    res.redirect("/");
+}
 export const postlogin = async (req,res) => {
     const {ID,password} = req.body;
-    await User.create({
-        ID,
-        password
-    });
-    res.redirect("/");
+    
+    return res.redirect("/");
 }
 export const adminlogin = (req,res) => {
     res.render();
