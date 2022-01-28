@@ -10,6 +10,13 @@ export const join= (req,res) => {
 }
 export const postJoin = async (req,res) => {
     const {ID,password} = req.body;
+    const check = await User.exists({ ID: ID });
+    if (check)
+    {
+        console.log("Already ID exists, find other ID");
+        return res.render("join.pug");
+    }
+    else {
     try{
         const user = await User.create(
         {
@@ -17,11 +24,14 @@ export const postJoin = async (req,res) => {
             password
         }
     );
+    console.log("Create Success");
     res.redirect("/");
     } catch (error)
     {
+        console.log("error");
         return res.render("join.pug");
     }
+}
 
 }
 export const postlogin = async (req,res) => {
