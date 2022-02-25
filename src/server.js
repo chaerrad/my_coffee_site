@@ -8,7 +8,7 @@ import globalRouter from "./routers/globalRouter.js";
 import loginRouter from "./routers/loginRouter.js";
 import purchaseRouter from "./routers/purchaseRouter.js";
 import reserveRouter from "./routers/reserveRouter.js";
-
+import {localMiddleware} from "./localMiddleware.js";
 const PORT = 4000;
 const app = express();
 const logger = morgan("dev");
@@ -28,7 +28,7 @@ app.use(
      store: MongoStore.create({ mongoUrl: "mongodb://127.0.0.1:27017/my_coffee"}),
   })
 );
-
+app.use(localMiddleware);
 app.use("/", globalRouter);
 app.use("/login", loginRouter);
 app.use("/purchase", purchaseRouter);

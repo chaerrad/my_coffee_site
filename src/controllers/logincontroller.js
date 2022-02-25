@@ -46,6 +46,8 @@ export const postlogin = async (req,res) => {
         if(user.password === password)
         {
             console.log("password correct");
+            req.session.loggedIn = true;
+            
             return res.redirect("/");
         }
         else
